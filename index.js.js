@@ -1,40 +1,42 @@
 var readlineSync = require('readline-sync');
-var username = readlineSync.question("What's ur name? ")
+var username = readlineSync.question("What's your name? ")
 var score = 0;
 var qa = [
   q1 = {
-    q1: 'What is my name? ',
-    a1: 'kamesh'
+    q1: '1. How old am I? --> ',
+    a1: '22'
   },
   q2 = {
-    q1: 'What is my favourite dish? ',
+    q1: '2. What is my favourite dish? --> ',
     a1: 'pizza'
   },
   q3 = {
-    q1: 'Who is my favourite footballer? (Hint: Leo) ',
-    a1: 'messi'
+    q1: '3. What is my favourite sport? --> ',
+    a1: 'football'
   },
-  /*q4={
-   q1:'inspiratipon?',
-   a1:'naruto',
-   },
-  q5={
-   q1:'idolize?',
-   a1:'success'
-   },*/
+  q4 = {
+    q1: '4. What is my favourite color? --> ',
+    a1: 'yellow'
+  },
+  q5 = {
+    q1: '5. Where am I from? --> ',
+    a1: 'mysore'
+  },
+
 ];
 var highscores = [
   highscore = {
-    name: "you",
-    score: 3
+    name: "Kamesh",
+    score: 5
   },
   secondhighscore = {
-    name: "you again",
-    score: 2
+    name: "Tanay",
+    score: 4
   },
 ]
 
-console.log("Welcome " + username + "! ");
+console.log("Welcome " + username + "! Let's play DO YOU KNOW Kamesh? ");
+console.log("----------------");
 qa.forEach(question => {
   var useranswer = readlineSync.question(question.q1);
   if (useranswer.toLowerCase() == question.a1) {
@@ -50,6 +52,6 @@ qa.forEach(question => {
   };
 });
 
-console.log(`yor score is ${score}. check out the highscores:`)
+console.log(`Your score is ${score}. Check out the masters of this game:`)
 highscores.forEach(hs => { console.log(hs.name + " " + hs.score) });
 
